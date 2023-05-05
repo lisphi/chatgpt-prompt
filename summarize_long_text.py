@@ -5,7 +5,7 @@ import os
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
+openai.proxy = os.getenv("OPENAI_PROXY")
 
 def split_text_into_chunks(text, max_chunk_size=2048):
     words = text.split()
