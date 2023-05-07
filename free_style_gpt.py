@@ -24,18 +24,17 @@ def get_completion(prompt, model="gpt-3.5-turbo", stream=False):
             if 'content' in chunk_message:
                 content = chunk_message['content']
                 collected_messages.append(content)
-                print(content, end="")
-                sys.stdout.flush()
+                print(content, end="", flush=True)
         return "".join(collected_messages)
     else:
-        return response.choices[0].message["content"]
+        content = response.choices[0].message["content"]
+        print(content, flush=True)
+        return content
 
 
 model = 'gpt-3.5-turbo'
-stream = False
+stream = True
 prompt = 'tell me a joke'
 
 response = get_completion(prompt, model, stream)
-if not stream:
-    print(response)
 
