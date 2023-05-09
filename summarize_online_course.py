@@ -60,13 +60,23 @@ lang = 'en-US'
 stream_on = True
 final_summary_on = False
 
-summary = ''
-with open(source_file, "r") as f:
-    summary = summarize_paragraphs('ChatGPT Prompt Engineering for Developers', \
-        'Lesson 4: Summarizing', \
-        f.read().split(paragraph_separator), lang, stream_on, final_summary_on)
-     
-with open(source_file + '.summary', 'w') as f:
-    f.write(summary)
+
+lessons = [
+    { 'file_path': './resources/prompt_engineering/l5.txt', 'title': 'Lesson 5: Inferring' },
+    { 'file_path': './resources/prompt_engineering/l6.txt', 'title': 'Lesson 6: Transforming' },
+    { 'file_path': './resources/prompt_engineering/l7.txt', 'title': 'Lesson 7: Explanding' },
+    { 'file_path': './resources/prompt_engineering/l8.txt', 'title': 'Lesson 8: Chatbot' },
+    { 'file_path': './resources/prompt_engineering/l9.txt', 'title': 'Lesson 9: Conclusion' },
+]
+
+for lesson in lessons:
+    summary = ''
+    with open(lesson['file_path'], "r") as f:
+        summary = summarize_paragraphs('ChatGPT Prompt Engineering for Developers', \
+            lesson['title'], \
+            f.read().split(paragraph_separator), lang, stream_on, final_summary_on)
+        
+    with open(lesson['file_path'] + '.summary', 'w') as f:
+        f.write(summary)
 
 
