@@ -62,6 +62,10 @@ final_summary_on = False
 
 
 lessons = [
+    { 'file_path': './resources/prompt_engineering/l1.txt', 'title': 'Lesson 1: Introduction' },
+    { 'file_path': './resources/prompt_engineering/l2.txt', 'title': 'Lesson 2: Guidelines' },
+    { 'file_path': './resources/prompt_engineering/l3.txt', 'title': 'Lesson 3: Iterative' },
+    { 'file_path': './resources/prompt_engineering/l4.txt', 'title': 'Lesson 4: Chatbot' },
     { 'file_path': './resources/prompt_engineering/l5.txt', 'title': 'Lesson 5: Inferring' },
     { 'file_path': './resources/prompt_engineering/l6.txt', 'title': 'Lesson 6: Transforming' },
     { 'file_path': './resources/prompt_engineering/l7.txt', 'title': 'Lesson 7: Explanding' },
